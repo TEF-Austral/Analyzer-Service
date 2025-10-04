@@ -1,0 +1,25 @@
+services:
+  api:
+    container_name: "analyzer-service-api"
+    build:
+      context: .
+      dockerfile: Dockerfile.multi
+    ports:
+      - 8004:8080
+    env_file:
+      - .env
+    environment:
+      DB_HOST: postgres_db
+
+  db:
+    container_name: analyzer_db
+    image: postgres:16
+    ports:
+      - 5436:5432
+    env_file:
+      - .env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
