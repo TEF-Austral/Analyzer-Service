@@ -14,4 +14,4 @@ plugins {
 
 rootProject.name = 'analyzer-service'
 
-include('common', 'analyzer', 'token', 'reader', 'lexer', 'parser', 'ast')
+include('common', 'analyzer', 'token', 'reader', 'lexer', 'parser', 'ast', 'api')
